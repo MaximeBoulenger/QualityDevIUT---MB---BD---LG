@@ -14,10 +14,6 @@ public class Media
         NumRef = numRef;
         NbAvailable = nbAvailable;
     }
-    
-    private int NumRef { get; set; }
-    
-    private int NbAvailable { get; set; }
 
 	public virtual void AfficherInfos()
         {
