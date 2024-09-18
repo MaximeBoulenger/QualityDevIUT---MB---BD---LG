@@ -7,4 +7,9 @@ public class Media
     private int NumRef { get; set; }
     
     private int NbAvailable { get; set; }
+
+	public virtual void AfficherInfos()
+        {
+            Console.WriteLine($"Title: {Title}, NumRef: {NumRef}, NbAvailable: {NbAvailable}");
+        }
 }
