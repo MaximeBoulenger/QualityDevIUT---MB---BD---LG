@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\GestionLibrary.csproj": {}
+    "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/GestionLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\GestionLibrary.csproj": {
+    "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/GestionLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\GestionLibrary.csproj",
+        "projectUniqueName": "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/GestionLibrary.csproj",
         "projectName": "GestionLibrary",
-        "projectPath": "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\GestionLibrary.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\obj\\",
+        "projectPath": "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/GestionLibrary.csproj",
+        "packagesPath": "/Users/bastiendurand/.nuget/packages/",
+        "outputPath": "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bastiendurand/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -54,12 +53,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

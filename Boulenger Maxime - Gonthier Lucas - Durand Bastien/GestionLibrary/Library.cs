@@ -1,4 +1,6 @@
-﻿namespace GestionLibrary;
+﻿using System.Text.Json;
+
+namespace GestionLibrary;
 
 // Class pour la gestion de la librairie
 public class Library
@@ -27,7 +29,7 @@ public class Library
     // Emprunt d'un media
     public bool BorrowMedia(string title, string user)
     {
-        Media media = mediaCollection.FirstOrDefault(m => m.Title == title && m.AvailableCopies > 0);
+        Media media = mediaCollection.FirstOrDefault(m => m.Title == title && m.NbAvailable > 0);
         if (media != null)
         {
             media.NbAvailable--; // Decrease the available copies
@@ -75,5 +77,24 @@ public class Library
         Console.WriteLine($"Total media: {totalMedia}");
         Console.WriteLine($"Total available copies: {totalAvailableCopies}");
         Console.WriteLine($"Total borrows: {totalBorrows}");
+    }
+
+    public void Save(string p_fileName = "data.json")
+    {
+        if (p_fileName != "data.json")
+         if (!p_fileName.Contains(".json"))
+        {
+            p_fileName = p_fileName+".json";
+        }
+        
+        var jsonString = JsonSerializer.Serialize(mediaCollection);
+        File.WriteAllText(p_fileName, jsonString);
+    }
+
+    public void Import(string p_fileName = "data.json")
+    {
+        var dataFile = File.ReadAllText(p_fileName);
+        var dataJsonAsList = JsonSerializer.Deserialize<List<Media>>(dataFile);
+        mediaCollection.AddRange((IEnumerable<Media>)dataJsonAsList);
     }
 }
