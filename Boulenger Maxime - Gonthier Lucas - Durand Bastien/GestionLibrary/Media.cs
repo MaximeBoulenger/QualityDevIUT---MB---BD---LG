@@ -1,5 +1,6 @@
 ﻿namespace GestionLibrary;
 
+// Class pour la gestion de tous les medias (CD, DVD, Livre)
 public class Media
 {
     public string Title { get; private set; }
@@ -8,7 +9,7 @@ public class Media
     
     public int NbAvailable { get; private set; }
     
-    //constructeur
+    // Constructeur de la class Media
     public Media(string title, int numRef, int nbAvailable)
     {
         Title = title;
@@ -16,19 +17,19 @@ public class Media
         NbAvailable = nbAvailable;
     }
 
-    //méthode d'affichage
+    // Methode d'affichage des medias
     public virtual void AfficherInfos()
     {
         Console.WriteLine($"Title: {Title}, NumRef: {NumRef}, NbAvailable: {NbAvailable}");
     }
-    //Surcharger opérateur + 
+    // Surcharge de l'operateur + 
     public static Media operator +(Media p_media, int p_quantity)
     {
         p_media.NbAvailable += p_quantity;
         return p_media;
     }
 
-    //Surcharge opérateur - 
+    // Surcharge de l'operateur - 
     public static Media operator -(Media p_media,int p_quantity)
     {
         if (p_media.NbAvailable < p_quantity)

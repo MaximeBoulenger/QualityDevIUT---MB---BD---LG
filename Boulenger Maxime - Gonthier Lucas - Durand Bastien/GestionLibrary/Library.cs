@@ -1,17 +1,18 @@
 ﻿namespace GestionLibrary;
 
+// Class pour la gestion de la librairie
 public class Library
 {
     private List<Media> mediaCollection = new List<Media>();
     private List<Borrow> borrows = new List<Borrow>();
 
-    // 1. Add a Media
+    // Ajout d'un media
     public void AddMedia(Media media)
     {
         mediaCollection.Add(media);
     }
 
-    // 2. Remove a Media
+    // Suppression d'un media
     public bool RemoveMedia(string title)
     {
         Media media = mediaCollection.FirstOrDefault(m => m.Title == title);
@@ -23,7 +24,7 @@ public class Library
         return false;
     }
 
-    // 3. Borrow a Media
+    // Emprunt d'un media
     public bool BorrowMedia(string title, string user)
     {
         Media media = mediaCollection.FirstOrDefault(m => m.Title == title && m.AvailableCopies > 0);
@@ -36,7 +37,7 @@ public class Library
         return false;
     }
 
-    // 4. Return a Media
+    // Retour d'un media
     public bool ReturnMedia(string title, string user)
     {
         Borrow borrow = borrows.FirstOrDefault(b => b.Media.Title == title && b.User == user);
@@ -49,7 +50,7 @@ public class Library
         return false;
     }
 
-    // 5. Search for Media by Title or Author
+    // Rechercher un media avec son titre ou son auteur
     public List<Media> SearchMedia(string searchCriteria)
     {
         return mediaCollection.Where(m =>
@@ -58,13 +59,13 @@ public class Library
         ).ToList();
     }
 
-    // 6. List Media Borrowed by a User
+    // Lister les medias emprunte
     public List<Borrow> ListBorrowsByUser(string user)
     {
         return borrows.Where(b => b.User == user).ToList();
     }
 
-    // 7. Display Library Statistics
+    // Afficher les stats de la librairie
     public void DisplayStatistics()
     {
         int totalMedia = mediaCollection.Count;

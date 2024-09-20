@@ -1,5 +1,6 @@
 ﻿namespace GestionLibrary;
 
+// CLass pour la gestion des DVD
 public class DVD : Media
 {
     public string Director { get; set; }
