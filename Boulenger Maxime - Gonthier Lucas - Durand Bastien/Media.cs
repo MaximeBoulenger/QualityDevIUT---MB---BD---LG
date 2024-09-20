@@ -8,6 +8,7 @@ public class Media
     
     public int NbAvailable { get; private set; }
     
+    //constructeur
     public Media(string title, int numRef, int nbAvailable)
     {
         Title = title;
@@ -15,6 +16,7 @@ public class Media
         NbAvailable = nbAvailable;
     }
 
+    //méthode d'affichage
 	public virtual void AfficherInfos()
         {
             Console.WriteLine($"Title: {Title}, NumRef: {NumRef}, NbAvailable: {NbAvailable}");

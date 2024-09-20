@@ -9,6 +9,7 @@ public class DVD : Media
 
     public List<string> Languages { get; set; }
 
+	//méthode d'affichage héritant de la classe Media, modifiée
     public override void AfficherInfos()
     {
         base.AfficherInfos();

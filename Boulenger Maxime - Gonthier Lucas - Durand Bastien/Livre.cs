@@ -8,6 +8,7 @@ public class Livre : Media
 
 	string Genre { get; set; }
 
+	//méthode d'affichage héritant de la classe Media, modifiée
 	public override void AfficherInfos()
         {
             base.AfficherInfos();
