@@ -1,17 +1,23 @@
 ﻿namespace GestionLibrary;
 
-// Class pour la gestion des emprunts
+/// <summary>
+/// Class pour la gestion des emprunts
+/// </summary>
 public class Borrow
 {
     public string User { get; set; }
     public Media Media { get; set; }
     public DateTime BorrowDate { get; set; }
-
-    // Constructeur de la class Borrow (emprunt)
-    public Borrow(string user, Media media)
+    
+    /// <summary>
+    /// Constructeur de la class Borrow (emprunt)
+    /// </summary>
+    /// <param name="p_user"></param>
+    /// <param name="p_media"></param>
+    public Borrow(string p_user, Media p_media)
     {
-        User = user;
-        Media = media;
+        User = p_user;
+        Media = p_media;
         BorrowDate = DateTime.Now;
     }
 }

@@ -63,7 +63,8 @@ namespace GestionLibrary
             library.Save();
 
             //charger les médias depuis un fichier JSON
-            library.Import();
+            var newLibrary = new Library();
+            newLibrary.Import();
 
             //afficher les informations des médias
             foreach (Media media in library.SearchMedia("Harry Potter"))

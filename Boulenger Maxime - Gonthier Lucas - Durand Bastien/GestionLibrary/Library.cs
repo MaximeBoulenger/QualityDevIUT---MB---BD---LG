@@ -2,22 +2,31 @@
 
 namespace GestionLibrary;
 
-// Class pour la gestion de la librairie
+/// <summary>
+/// Class pour la gestion de la librairie
+/// </summary>
 public class Library
 {
     private List<Media> mediaCollection = new List<Media>();
     private List<Borrow> borrows = new List<Borrow>();
 
-    // Ajout d'un media
-    public void AddMedia(Media media)
+    /// <summary>
+    /// Ajout d'un media
+    /// </summary>
+    /// <param name="p_media"></param>
+    public void AddMedia(Media p_media)
     {
-        mediaCollection.Add(media);
+        mediaCollection.Add(p_media);
     }
 
-    // Suppression d'un media
-    public bool RemoveMedia(string title)
+    /// <summary>
+    /// Suppression d'un media
+    /// </summary>
+    /// <param name="p_title"></param>
+    /// <returns></returns>
+    public bool RemoveMedia(string p_title)
     {
-        Media media = mediaCollection.FirstOrDefault(m => m.Title == title);
+        Media media = mediaCollection.FirstOrDefault(m => m.Title == p_title);
         if (media != null)
         {
             mediaCollection.Remove(media);
@@ -26,48 +35,68 @@ public class Library
         return false;
     }
 
-    // Emprunt d'un media
-    public bool BorrowMedia(string title, string user)
+    /// <summary>
+    /// Emprunt d'un media
+    /// </summary>
+    /// <param name="p_title"></param>
+    /// <param name="p_user"></param>
+    /// <returns></returns>
+    public bool BorrowMedia(string p_title, string p_user)
     {
-        Media media = mediaCollection.FirstOrDefault(m => m.Title == title && m.NbAvailable > 0);
+        Media media = mediaCollection.FirstOrDefault(m => m.Title == p_title && m.NbAvailable > 0);
         if (media != null)
         {
-            media.Borrow(); // Decrease the available copies
-            borrows.Add(new Borrow(user, media)); // Record the borrow
+            media.Borrow(); // Decroit le nombre de copies disponible
+            borrows.Add(new Borrow(p_user, media)); // Ajout de l'emprunt
             return true;
         }
         return false;
     }
 
-    // Retour d'un media
-    public bool ReturnMedia(string title, string user)
+    /// <summary>
+    /// Retour d'un media
+    /// </summary>
+    /// <param name="p_title"></param>
+    /// <param name="p_user"></param>
+    /// <returns></returns>
+    public bool ReturnMedia(string p_title, string p_user)
     {
-        Borrow borrow = borrows.FirstOrDefault(b => b.Media.Title == title && b.User == user);
+        Borrow borrow = borrows.FirstOrDefault(b => b.Media.Title == p_title && b.User == p_user);
         if (borrow != null)
         {
-            borrow.Media.Return(); // Increase the available copies
-            borrows.Remove(borrow); // Remove the borrow record
+            borrow.Media.Return(); // Acroit le nombre de copies totales
+            borrows.Remove(borrow); // Enleve l'emprunt
             return true;
         }
         return false;
     }
 
-    // Rechercher un media avec son titre ou son auteur
-    public List<Media> SearchMedia(string searchCriteria)
+    /// <summary>
+    /// Rechercher un media avec son titre ou son auteur
+    /// </summary>
+    /// <param name="p_searchCriteria"></param>
+    /// <returns></returns>
+    public List<Media> SearchMedia(string p_searchCriteria)
     {
         return mediaCollection.Where(m =>
-            m.Title.Contains(searchCriteria, StringComparison.OrdinalIgnoreCase) ||
-            (m is Livre && ((Livre)m).Author.Contains(searchCriteria, StringComparison.OrdinalIgnoreCase))
+            m.Title.Contains(p_searchCriteria, StringComparison.OrdinalIgnoreCase) ||
+            (m is Livre && ((Livre)m).Author.Contains(p_searchCriteria, StringComparison.OrdinalIgnoreCase))
         ).ToList();
     }
 
-    // Lister les medias emprunte
-    public List<Borrow> ListBorrowsByUser(string user)
+    /// <summary>
+    /// Lister les medias emprunte
+    /// </summary>
+    /// <param name="p_user"></param>
+    /// <returns></returns>
+    public List<Borrow> ListBorrowsByUser(string p_user)
     {
-        return borrows.Where(b => b.User == user).ToList();
+        return borrows.Where(b => b.User == p_user).ToList();
     }
 
-    // Afficher les stats de la librairie
+    /// <summary>
+    /// Afficher les stats de la librairie
+    /// </summary>
     public void DisplayStatistics()
     {
         int totalMedia = mediaCollection.Count;
@@ -79,6 +108,10 @@ public class Library
         Console.WriteLine($"Total borrows: {totalBorrows}");
     }
 
+    /// <summary>
+    /// Sauvegarde la library
+    /// </summary>
+    /// <param name="p_fileName">Nom de fichier par défaut : data.json</param>
     public void Save(string p_fileName = "data.json")
     {
         if (p_fileName != "data.json")
@@ -91,6 +124,10 @@ public class Library
         File.WriteAllText(p_fileName, jsonString);
     }
 
+    /// <summary>
+    /// Importe la library d'un fichier json
+    /// </summary>
+    /// <param name="p_fileName">Nom de fichier par défaut : data.json</param>
     public void Import(string p_fileName = "data.json")
     {
         var dataFile = File.ReadAllText(p_fileName);
