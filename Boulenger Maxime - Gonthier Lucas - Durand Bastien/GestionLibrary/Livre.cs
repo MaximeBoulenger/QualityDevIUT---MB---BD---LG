@@ -3,11 +3,11 @@
 // Class pour la gestion des livres
 public class Livre : Media
 {
-    string Author { get; set; }
+    public string Author { get; set; }
 
-    string Editor { get; set; }
+    public string Editor { get; set; }
 
-    string Genre { get; set; }
+    public string Genre { get; set; }
     
     // Constructeur de la class Livre
     public Livre(string title, int numRef, int nbAvailable, string author, string editor, string genre) : base(title, numRef, nbAvailable)

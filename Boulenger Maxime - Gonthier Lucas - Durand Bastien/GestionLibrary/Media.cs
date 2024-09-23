@@ -63,4 +63,5 @@ public class Media
         NbAvailable++; // Augmente le nombre d'exemplaires disponibles
         Console.WriteLine($"{Title} has been returned. Copies available: {NbAvailable}");
     }
+    
 }

@@ -32,7 +32,7 @@ public class Library
         Media media = mediaCollection.FirstOrDefault(m => m.Title == title && m.NbAvailable > 0);
         if (media != null)
         {
-            media.NbAvailable--; // Decrease the available copies
+            media.Borrow(); // Decrease the available copies
             borrows.Add(new Borrow(user, media)); // Record the borrow
             return true;
         }
@@ -45,7 +45,7 @@ public class Library
         Borrow borrow = borrows.FirstOrDefault(b => b.Media.Title == title && b.User == user);
         if (borrow != null)
         {
-            borrow.Media.NbAvailable =borrow.Media.NbAvailable + 1; // Increase the available copies
+            borrow.Media.Return(); // Increase the available copies
             borrows.Remove(borrow); // Remove the borrow record
             return true;
         }
@@ -71,7 +71,7 @@ public class Library
     public void DisplayStatistics()
     {
         int totalMedia = mediaCollection.Count;
-        int totalAvailableCopies = mediaCollection.Sum(m => m.AvailableCopies);
+        int totalAvailableCopies = mediaCollection.Sum(m => m.NbAvailable);
         int totalBorrows = borrows.Count;
 
         Console.WriteLine($"Total media: {totalMedia}");
