@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DAgODA2c3k0=",
+  "dgSpecHash": "yN77Jp1zQrA=",
   "success": true,
-  "projectFilePath": "/Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/GestionLibrary.csproj",
-  "expectedPackageFiles": [
-    "/Users/bastiendurand/.nuget/packages/microsoft.netcore.app.ref/7.0.17/microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
-    "/Users/bastiendurand/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.17/microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
-    "/Users/bastiendurand/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.17/microsoft.netcore.app.host.osx-arm64.7.0.17.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\lucas\\RiderProjects\\QualityDevIUT---MB---BD---LG\\Boulenger Maxime - Gonthier Lucas - Durand Bastien\\GestionLibrary\\GestionLibrary.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

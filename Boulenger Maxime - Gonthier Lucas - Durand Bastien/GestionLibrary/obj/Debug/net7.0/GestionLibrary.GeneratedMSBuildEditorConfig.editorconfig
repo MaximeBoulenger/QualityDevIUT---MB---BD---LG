@@ -8,6 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionLibrary
-build_property.ProjectDir = /Users/bastiendurand/Documents/Semestre 5/Qualite Dev/QualityDevIUT---MB---BD---LG/Boulenger Maxime - Gonthier Lucas - Durand Bastien/GestionLibrary/
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\lucas\RiderProjects\QualityDevIUT---MB---BD---LG\Boulenger Maxime - Gonthier Lucas - Durand Bastien\GestionLibrary\
